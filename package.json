@@ -1,0 +1,11 @@
+{
+  "name": "battlemetrics-api-wrapper",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/blained-dev/battlemetrics-api-wrapper.git",
+  "author": "blained-dev <62573162+blained-dev@users.noreply.github.com>",
+  "license": "MIT",
+  "dependencies": {
+    "typescript": "^5.2.2"
+  }
+}
