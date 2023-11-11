@@ -1,4 +1,4 @@
-import { Relationship } from "./Relationship";
+import { Relationship } from "./Api";
 
 interface BanListAttributes {
 	action: "none" | "log" | "kick";

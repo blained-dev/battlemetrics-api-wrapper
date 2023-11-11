@@ -1,5 +1,4 @@
-import { PlayerIdentifier } from "./Api";
-import { Relationship } from "./Relationship";
+import { PlayerIdentifier, Relationship } from "./Api";
 
 export interface OrganizationFriendAttributes {
 	accepted: boolean;

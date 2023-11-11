@@ -1,10 +1,9 @@
-import { PageOptions } from "../base/Api";
+import { PageOptions, Relationship } from "../base/Api";
 import {
 	OrganizationFriend,
 	OrganizationFriendAttributes,
 	OrganizationFriendRelationships,
 } from "../base/OrganizationFriend";
-import { Relationship } from "../base/Relationship";
 
 export interface OrganizationFriendEndpointsFields {
 	organization: Relationship<"organization">;

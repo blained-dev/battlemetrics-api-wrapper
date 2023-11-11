@@ -1,5 +1,3 @@
-import { Relationship } from "./Relationship";
-
 export interface PageOptions {
 	key?: string;
 	rel?: "next" | "prev";
@@ -59,4 +57,27 @@ export interface OrganizationStats {
 	id: string;
 	relationships: OrganizationStatsRelationships;
 	type: "organizationStats";
+}
+
+export interface PlayerCounterAttributes {
+	name: string;
+	value: string;
+}
+
+export interface PlayerCounterRelationships {
+	organization: Relationship<"organization">;
+	player: Relationship<"player">;
+}
+
+export interface PlayerCounter {
+	attributes: PlayerCounterAttributes;
+	id: string;
+	relationships: PlayerCounterRelationships;
+	type: "playerCounter";
+}
+
+export type BasicRelationshipData<Type> = { type: Type; id: string };
+
+export interface Relationship<Type, AdditionalData = {}> {
+	data: BasicRelationshipData<Type> & AdditionalData;
 }

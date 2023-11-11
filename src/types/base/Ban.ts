@@ -1,5 +1,4 @@
-import { Player } from "./Player";
-import { Relationship } from "./Relationship";
+import { Relationship } from "./Api";
 
 export interface BanAttributes {
 	autoAddEnabled: boolean;
