@@ -1,0 +1,3 @@
+interface PlayerListFields {
+   flagPlayer:  
+}

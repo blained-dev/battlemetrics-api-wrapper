@@ -1,4 +1,4 @@
-import { BattlemetricsPlayer } from "./Player";
+import { Player } from "./Player";
 import { Relationship } from "./Relationship";
 
 export interface BanAttributes {
@@ -25,7 +25,7 @@ export interface BanRelationships {
 export interface Ban {
 	attributes: BanAttributes;
 	id: string;
-	meta: BattlemetricsPlayer;
+	meta: unknown;
 	relationships: BanRelationships;
 	type: "ban";
 }

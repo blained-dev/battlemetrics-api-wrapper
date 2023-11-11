@@ -43,3 +43,20 @@ export interface PlayerIdentifier {
 	relationships: PlayerIdentifierRelationships;
 	type: "identifier";
 }
+
+export interface OrganizationStatsAttributes {
+	gameRanks: { [gameName: string]: number };
+	identifiers: number;
+	uniquePlayers: number;
+}
+
+export interface OrganizationStatsRelationships {
+	organization: Relationship<"organization">;
+}
+
+export interface OrganizationStats {
+	attributes: OrganizationStatsAttributes;
+	id: string;
+	relationships: OrganizationStatsRelationships;
+	type: "organizationStats";
+}
