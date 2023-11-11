@@ -16,7 +16,7 @@ interface BanListAttributes {
 	permUpdate: boolean;
 }
 
-interface BanListServerRelationshipData {
+export interface BanListServerRelationshipData {
 	id: string;
 	meta?: {
 		action: string;

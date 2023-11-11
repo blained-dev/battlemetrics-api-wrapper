@@ -14,11 +14,11 @@ export interface BanListExemptionCreateParameters {
 export interface BanListExemptionReadParameters {}
 
 interface BanListExemptionEndpointFields {
-	banExemption?: keyof BanListExemptionAttributes;
+	banExemption: keyof BanListExemptionAttributes;
 }
 
 export interface BanListExemptionListExemptionsParameters {
-	fields?: BanListExemptionEndpointFields;
+	fields?: Partial<BanListExemptionEndpointFields>;
 }
 
 export interface BanListExemptionUpdate {

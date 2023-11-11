@@ -1,5 +1,5 @@
 import { Ban, BanAttributes, BanRelationships } from "../base/Ban";
-import { PageOptions } from "../base/Endpoint";
+import { PageOptions } from "../base/Api";
 import { Relationship } from "../base/Relationship";
 
 interface BanCreateParamaterRelationships extends BanRelationships {
@@ -31,7 +31,7 @@ type BanExportFormat =
 
 export interface BanExportParameters {
 	format: BanExportFormat;
-	filter?: Pick<BanEndpointFilters, "organization" | "server">;
+	filter?: Partial<Pick<BanEndpointsFilter, "organization" | "server">>;
 }
 
 type BanInfoIncludeOptions =
@@ -43,30 +43,30 @@ type BanInfoIncludeOptions =
 	| "banList"
 	| "banExemption";
 
-interface BanEndpointFilters {
-	banList?: string;
-	exempt?: string;
-	expired?: "true" | "false";
-	organization?: string;
-	player?: string;
-	search?: string;
-	server?: string;
-	users?: string;
+interface BanEndpointsFilter {
+	banList: string;
+	exempt: string;
+	expired: "true" | "false";
+	organization: string;
+	player: string;
+	search: string;
+	server: string;
+	users: string;
 }
 
-interface BanEndpointFields {
-	ban?: keyof BanAttributes;
-	// banExemption?: keyof;
-	// banList?: keyof;
-	// identifier?: keyof;
-	// organization?: keyof;
-	// player?: keyof;
-	// server?: keyof;
-	// user?: keyof;
+interface BanEndpointsFields {
+	ban: keyof BanAttributes;
+	banExemption: keyof Relationship<"banExemption">;
+	banList: keyof Relationship<"banList">;
+	// identifier: keyof Relationship<"identifier">;
+	organization: keyof Relationship<"organization">;
+	player: keyof Relationship<"player">;
+	server: keyof Relationship<"server">;
+	user: keyof Relationship<"user">;
 }
 
 export interface BanInfoParameters {
-	fields?: BanEndpointFields;
+	fields?: Partial<BanEndpointsFields>;
 	include?: BanInfoIncludeOptions;
 }
 
@@ -82,8 +82,8 @@ type BanListSortOptions =
 	| "-reason";
 
 export interface BanListParameters {
-	fields?: Omit<BanEndpointFields, "identifier">;
-	filter?: BanEndpointFilters;
+	fields?: Partial<Omit<BanEndpointsFields, "identifier">>;
+	filter?: Partial<BanEndpointsFilter>;
 	include?: BanListIncludeOptions;
 	page?: PageOptions;
 	sort?: BanListSortOptions;
