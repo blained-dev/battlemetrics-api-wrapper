@@ -1,6 +1,5 @@
 import { Ban, BanAttributes, BanRelationships } from "../base/Ban";
-import { PageOptions } from "../base/Api";
-import { Relationship } from "../base/Relationship";
+import { PageOptions, Relationship } from "../base/Api";
 
 interface BanCreateParamaterRelationships extends BanRelationships {
 	trigger: Relationship<"trigger">;

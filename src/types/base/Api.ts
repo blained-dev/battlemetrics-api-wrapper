@@ -81,3 +81,56 @@ export type BasicRelationshipData<Type> = { type: Type; id: string };
 export interface Relationship<Type, AdditionalData = {}> {
 	data: BasicRelationshipData<Type> & AdditionalData;
 }
+
+export interface PlayerStatsAttributes {
+	firstTimeSessionDuration: number;
+	maxPlayers: number;
+	minPlayers: number;
+	sessionDuration: number;
+	uniquePlayers: number;
+	uniquePlayersByCountry: number;
+}
+
+export interface PlayerStatsRelationships {
+	game: Relationship<"game">;
+	organization: Relationship<"organization">;
+	server: Relationship<"server">;
+}
+
+export interface PlayerStats {
+	attributes: PlayerStatsAttributes;
+	relationships: PlayerStatsRelationships;
+	type: "playerStats";
+}
+
+export interface ServerGroupAttributes {
+	rank: number | null;
+}
+
+export interface ServerGroupRelationships {
+	leader: Relationship<"server">;
+	servers: Relationship<"server">[];
+}
+
+export interface ServerGroup {
+	attributes: ServerGroupAttributes;
+	id: string;
+	relationships: ServerGroupRelationships;
+	type: "serverGroup";
+}
+
+export interface UserAttributes {
+	id: string;
+	nickname: string;
+}
+
+export interface UserRelationships {
+	organizations: Relationship<"organization">[];
+}
+
+export interface User {
+	attributes: UserAttributes;
+	id: string;
+	relationships: UserRelationships;
+	type: "user";
+}

@@ -1,6 +1,5 @@
-import { PageOptions } from "../base/Api";
+import { PageOptions, Relationship } from "../base/Api";
 import { NativeBanAttributes } from "../base/NativeBan";
-import { Relationship } from "../base/Relationship";
 
 type NativeBanIncludeOptions = "server" | "ban";
 

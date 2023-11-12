@@ -1,6 +1,5 @@
 import { BanList, BanListServerRelationshipData } from "../base/BanList";
-import { PageOptions } from "../base/Api";
-import { Relationship } from "../base/Relationship";
+import { PageOptions, Relationship } from "../base/Api";
 
 export interface BanListCreateParameters {
 	data: Omit<
