@@ -50,7 +50,7 @@ interface SessionSessionsCoplayFields {
 type SessionSessionsCoplayIncludeOptions = "player" | "identifier" | "server";
 
 export interface SessionSessionsCoplayParameters {
-	fields?: Partial<SessionSessionDetailsFields>;
-	include?: SessionSessionDetailsIncludeOptions;
+	fields?: Partial<SessionSessionsCoplayFields>;
+	include?: SessionSessionsCoplayIncludeOptions;
 	page?: PageOptions;
 }
