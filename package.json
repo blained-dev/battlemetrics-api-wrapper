@@ -6,6 +6,7 @@
   "author": "blained-dev <62573162+blained-dev@users.noreply.github.com>",
   "license": "MIT",
   "dependencies": {
+    "axios": "^1.6.1",
     "typescript": "^5.2.2"
   }
 }

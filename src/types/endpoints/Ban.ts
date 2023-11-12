@@ -1,22 +1,22 @@
 import { Ban, BanAttributes, BanRelationships } from "../base/Ban";
 import { PageOptions, Relationship } from "../base/Api";
 
-interface BanCreateParamaterRelationships extends BanRelationships {
+interface BanCreateParameterRelationships extends BanRelationships {
 	trigger: Relationship<"trigger">;
 }
 
-export interface BanCreateParamaters {
+export interface BanCreateParameters {
 	data: Omit<Ban, "relationships"> & {
-		relationships: BanCreateParamaterRelationships;
+		relationships: BanCreateParameterRelationships;
 	};
 }
 
-interface BanImportParamaterRelationships
+interface BanImportParameterRelationships
 	extends Omit<BanRelationships, "user"> {}
 
 export interface BanImportParameters {
 	data: (Omit<Ban, "relationships"> & {
-		relationships: BanImportParamaterRelationships;
+		relationships: BanImportParameterRelationships;
 	})[];
 }
 

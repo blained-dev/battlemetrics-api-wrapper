@@ -1,5 +1,5 @@
 import {
-	BanCreateParamaters,
+	BanCreateParameters,
 	BanExportParameters,
 	BanImportParameters,
 	BanInfoParameters,
@@ -8,11 +8,11 @@ import {
 } from "../../endpoints/Ban";
 
 export interface BansEndpoints {
-	create(ban: BanCreateParamaters): Promise<any>;
+	create(ban: BanCreateParameters): Promise<any>;
 	import(ban: BanImportParameters): Promise<any>;
 	export(options: BanExportParameters): Promise<any>;
 	delete(banId: string): Promise<any>;
-	info(options: BanInfoParameters): Promise<any>;
-	list(options: BanListParameters): Promise<any>;
-	update(ban: BanUpdateParameters): Promise<any>;
+	info(banId: string, options?: BanInfoParameters): Promise<any>;
+	list(options?: BanListParameters): Promise<any>;
+	update(banId: string, ban: BanUpdateParameters): Promise<any>;
 }
